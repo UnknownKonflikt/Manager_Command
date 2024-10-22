@@ -1,12 +1,14 @@
 const express = require('express');
+const  { Client } = require('pg');
+const departmentRoutes = require('./routes');
+const dbConnection = require('./connection');
+
 const app = express();
 const PORT = process.env.PORT || 3001;
-const  {client} = require('pg');
-const departmantRoutes = require('./routes');
 
 // Middleware
 app.use(express.json());
-app.use('/routes', departmantRoutes);
+app.use('/routes', departmentRoutes);
 
 // Routes   
 app.get('/', (req, res) => {
@@ -29,11 +31,11 @@ const client = new Client({
 
 //Connect to database
 client.connect()
-    .then (() => {
+    .then(() => {
         console.log('Connected to database successfully!');
     })
-    .catch(err => {
-        console.error('Error connecting to database', err.stack);
+    .catch((err: Error) => {
+        console.error('Connection error', err.stack);
     });
 
 //Test the database connection

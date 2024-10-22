@@ -1,24 +1,21 @@
-import dotenv from 'dotenv';
-import pg from 'pg';
-import inquirer from 'inquirer';
+import { pool } from 'pg';
 
-dotenv.config();
-const {pool} =pg;
-const {client } = pg;
 
-const pool = new Pool({
+
+
+const pool = new pool({
     user: process.env.DB_USER,
-    host: process.env.DB_HOST,
+    host: 'localhost',
     database: process.env.DB_DATABASE,
-    password: process.env.DB_PASS,
-    port: process.env.DB_PORT
+    password: process.env.DB_PASSWORD,
+    port: 5432,
 });
 
-const connectToDatabase = async () => {
-    try {
-        await pool.connect();
+pool.connect()
+    .then(() => {
         console.log('Connected to database successfully!');
-    } catch (err) {
+    })
+    .catch(err => {
         console.error('Error connecting to database', err.stack);
-    }
-}
+    });
+export default pool;
