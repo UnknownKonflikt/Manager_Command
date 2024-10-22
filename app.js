@@ -63,8 +63,8 @@ client.connect((err) => {
         case "Quit":
           connection.end();
           break;
-
-        default:
+       
+          default:
           console.log('Invalid choice');
           break;
       }
