@@ -1,0 +1,24 @@
+{
+  "name": "manager_command",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Command-line app to manage employees",
+  "main": "app.js",
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnknownKonflikt/Manager_Command.git"
+  },
+  "keywords": [
+    "manager"
+  ],
+  "author": "Anthony Gillespie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UnknownKonflikt/Manager_Command/issues"
+  },
+  "homepage": "https://github.com/UnknownKonflikt/Manager_Command#readme"
+}
