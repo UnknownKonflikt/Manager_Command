@@ -4,9 +4,10 @@
   "type": "module",
   "description": "Command-line app to manage employees",
   "main": "app.js",
-  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "npm run build && node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/UnknownKonflikt/Manager_Command/issues"
   },
-  "homepage": "https://github.com/UnknownKonflikt/Manager_Command#readme"
+  "homepage": "https://github.com/UnknownKonflikt/Manager_Command#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "inquirer": "^12.0.0",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/pg": "^8.11.10",
+    "typescript": "^4.5.4"
+  }
 }
